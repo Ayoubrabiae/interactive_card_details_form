@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://ayoubrabiae.github.io/interactive_card_details_form/)
-- Live Site URL: [Live site URL](https://www.frontendmentor.io/solutions/interactive-card-details-form-o2WUc1EKFJ)
+- Solution URL: [Live site URL](https://ayoubrabiae.github.io/interactive_card_details_form/)
+- Live Site URL: [Solution URL](https://www.frontendmentor.io/solutions/interactive-card-details-form-o2WUc1EKFJ)
 
 ## My process
 
