@@ -1,0 +1,338 @@
+/* Global Styling */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --active-border-color: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    --dark-grayish: hsl(279, 6%, 55%);
+    --very-dark: hsl(278, 68%, 11%);
+    --light-grayish: hsl(270, 3%, 87%);
+    --error-color: hsl(0, 100%, 66%);
+    --duration: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding-bottom: 82px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+/* App Stuling */
+.app {
+    display: flex;
+    min-height: calc(100vh - 61px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .app {
+        flex-direction: column;
+    }
+}
+
+.app .cards-container {
+    width: 30%;
+    background-image: url(../images/bg-main-desktop.png);
+    padding: 20px;
+    position: relative;
+}
+
+
+@media (max-width: 900px) {
+    .app .cards-container {
+        width: 100%;
+        background-image: url(../images/bg-main-mobile.png);
+        background-size: cover;
+        height: 15rem;
+    }
+}
+
+.app .cards-container .front-card,
+.app .cards-container .back-card {
+    width: 21rem;
+    position: absolute;
+}
+
+@media (max-width: 767px) {
+
+    .app .cards-container .front-card,
+    .app .cards-container .back-card {
+        width: 18rem;
+        position: absolute;
+    }
+}
+
+.app .cards-container .front-card {
+    top: 15%;
+    right: -100px;
+}
+
+.app .cards-container .back-card {
+    bottom: 15%;
+    right: -160px;
+}
+
+@media (max-width: 900px) {
+    .app .cards-container .front-card {
+        top: 122px;
+        left: calc(50% - 32px);
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    .app .cards-container .back-card {
+        top: 20px;
+        right: calc(50% - 32px);
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 767px) {
+    .app .cards-container .front-card {
+        top: 110px;
+    }
+}
+
+.app .cards-container .front-card .circles {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.app .cards-container .front-card .fill-circle {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.app .cards-container .front-card .empty-circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.app .cards-container .front-card .card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 13px;
+}
+
+.app .cards-container .front-card .number {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 767px) {
+    .app .cards-container .front-card .number {
+        font-size: 19px;
+    }
+}
+
+.app .cards-container .front-card .date {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+
+
+.app .cards-container .back-card .cvc {
+    position: absolute;
+    color: white;
+    right: 40px;
+    top: 82px;
+    font-size: 13px;
+}
+
+@media (max-width: 767px) {
+    .app .cards-container .back-card .cvc {
+        right: 35px;
+        top: 69px;
+    }
+}
+
+.app .form-area {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 100px;
+}
+
+@media (max-width: 900px) {
+    .app .form-area {
+        width: 100%;
+        padding: 100px 15px 50px;
+    }
+}
+
+.app form {
+    width: 20rem;
+    max-width: 100%;
+}
+
+.app form .card-name {
+    margin-bottom: 20px;
+}
+
+.app form .card-number {
+    margin-bottom: 20px;
+}
+
+.app form .flex-column {
+    display: flex;
+}
+
+.app form .exp-date {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.app form .cvc {
+    display: inline-block;
+}
+
+.app form .error-container {
+    color: var(--error-color);
+}
+
+.app form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.app form .input-container {
+    display: inline-block;
+    background: transparent;
+    transition-duration: var(--duration);
+    padding: 1px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.app form .input-container.focus {
+    background: var(--active-border-color);
+}
+
+
+.app form .card-name .input-container,
+.app form .card-number .input-container {
+    width: 100%;
+}
+
+.app form input {
+    border: 1px solid var(--light-grayish);
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    transition-duration: var(--duration);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.app form .input-container.focus input {
+    border-color: transparent;
+}
+
+.app form .exp-date input {
+    width: 70px;
+}
+
+.app form .exp-date .input-container:first-of-type {
+    margin-right: 5px;
+}
+
+.app form .cvc input {
+    width: 140px;
+}
+
+.app form .error-label {
+    color: var(--error-color);
+    text-transform: lowercase;
+    display: block;
+}
+
+.app form .submit-btn {
+    display: block;
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    color: #fff;
+    background-color: var(--very-dark);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.app .complete {
+    text-align: center;
+}
+
+.app .complete img {
+    margin-bottom: 30px;
+}
+
+.app .complete h3 {
+    margin-bottom: 20px;
+    color: var(--very-dark);
+}
+
+.app .complete p {
+    text-transform: capitalize;
+    color: var(--dark-grayish);
+}
+
+.app .complete:nth-of-type(2) {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--very-dark);
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px;
+}
+
+footer a {
+    color: var(--dark-grayish);
+    text-decoration: none;
+}

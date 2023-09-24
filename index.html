@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive details</title>
+  <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+  <main class="app">
+    <aside class="cards-container">
+      <div class="front-card">
+        <img src="images/bg-card-front.png" alt="Front card image">
+        <div class="circles">
+          <span class="fill-circle"></span>
+          <span class="empty-circle"></span>
+        </div>
+        <div class="card-info">
+          <span class="number">0000 0000 0000 0000</span>
+          <span class="name">Jane Appleseed</span>
+          <span class="date"><span class="month">00</span>/<span class="year">00</span></span>
+        </div>
+      </div>
+      <div class="back-card">
+        <span class="cvc">000</span>
+        <img src="images/bg-card-back.png" alt="Back card image">
+      </div>
+    </aside>
+    <section class="form-area">
+      <form>
+        <div class="form-container">
+          <div class="card-name">
+            <label for="card-name">Cardholder name</label>
+            <div class="input-container">
+              <input type="text" id="card-name" maxlength="16" placeholder="e.g Jane Appleseed" required>
+            </div>
+            <span class="error-label"></span>
+          </div>
+          <div class="card-number">
+            <label for="card-number">Card number</label>
+            <div class="input-container">
+              <input type="text" id="card-number" maxlength="19" placeholder="Card number" required>
+            </div>
+            <span class="error-label"></span>
+          </div>
+          <div class="flex-column">
+            <div class="exp-date">
+              <label for="exp-month">exp. date (MM/YY)</label>
+              <div class="input-container">
+                <input type="number" id="exp-month" maxlength="2" placeholder="MM" required>
+              </div>
+              <div class="input-container">
+                <input type="number" id="exp-year" maxlength="2" placeholder="YY" required>
+              </div>
+              <span class="error-label"></span>
+            </div>
+            <div class="cvc">
+              <label for="cvc">Cvc</label>
+              <div class="input-container">
+                <input type="number" id="cvc" maxlength="3" placeholder="e.g 123" required>
+              </div>
+              <span class="error-label"></span>
+            </div>
+          </div>
+        </div>
+        <button class="submit-btn">Confirm</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Ayoub Rabya</a>.
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
