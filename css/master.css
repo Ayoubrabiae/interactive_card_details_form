@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 :root {
+    --main-bg: linear-gradient(to right, #592264, #37103D);
     --active-border-color: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     --dark-grayish: hsl(279, 6%, 55%);
     --very-dark: hsl(278, 68%, 11%);
@@ -14,6 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition-duration: var(--duration);
 }
 
 body {
@@ -49,7 +51,7 @@ img {
 
 .app .cards-container {
     width: 30%;
-    background-image: url(../images/bg-main-desktop.png);
+    background-image: var(--main-bg);
     padding: 20px;
     position: relative;
 }
@@ -58,7 +60,6 @@ img {
 @media (max-width: 900px) {
     .app .cards-container {
         width: 100%;
-        background-image: url(../images/bg-main-mobile.png);
         background-size: cover;
         height: 15rem;
     }
@@ -67,7 +68,17 @@ img {
 .app .cards-container .front-card,
 .app .cards-container .back-card {
     width: 21rem;
+    height: 11.6rem;
     position: absolute;
+}
+
+
+.app .cards-container .front-card {
+    top: 15%;
+    right: -100px;
+    border-radius: 10px;
+    position: absolute;
+    background: var(--active-border-color);
 }
 
 @media (max-width: 767px) {
@@ -75,13 +86,9 @@ img {
     .app .cards-container .front-card,
     .app .cards-container .back-card {
         width: 18rem;
+        height: 10rem;
         position: absolute;
     }
-}
-
-.app .cards-container .front-card {
-    top: 15%;
-    right: -100px;
 }
 
 .app .cards-container .back-card {
@@ -186,6 +193,8 @@ img {
     align-items: center;
     justify-content: center;
     padding-left: 100px;
+    position: relative;
+    color: var(--very-dark);
 }
 
 @media (max-width: 900px) {
@@ -303,8 +312,17 @@ img {
     text-align: center;
 }
 
-.app .complete img {
-    margin-bottom: 30px;
+.app .complete i {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    background: var(--active-border-color);
+    color: white;
+    font-size: 40px;
+    border-radius: 50%;
 }
 
 .app .complete h3 {
@@ -319,6 +337,54 @@ img {
 
 .app .complete:nth-of-type(2) {
     display: none;
+}
+
+/* Theme option styling */
+
+.app .theme {
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    color: #999;
+    font-size: 20px;
+    text-align: right;
+}
+
+.app .theme i {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.app .theme .categories {
+    display: grid;
+    background-color: white;
+    box-shadow: 0 0 10px;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: -1;
+    position: relative;
+    opacity: 0;
+    transition-duration: var(--duration);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.app .theme .categories.active {
+    opacity: 1;
+    z-index: 0;
+}
+
+.app .theme .category {
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+.app .theme .category.active {
+    opacity: 1;
 }
 
 footer {
